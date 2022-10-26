@@ -19,7 +19,7 @@ make install
 
 ## Create a container image
 
-Create an ECS repository:
+Create an ECR repository:
 
 ```sh
 awslocal ecr create-repository --repository-name iris-machine-learning-tutorial | jq -r '.repository.repositoryUri'
