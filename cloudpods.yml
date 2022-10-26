@@ -1,0 +1,3 @@
+pods:
+- location: ./thumbnail-qs.zip
+  name: thumbnail-qs
