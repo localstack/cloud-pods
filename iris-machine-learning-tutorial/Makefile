@@ -23,12 +23,13 @@ logs:
 	@localstack logs > logs.txt
 
 run:
-	awslocal ecr create-repository --repository-name iris-machine-learning-tutorial | jq -r '.repository.repositoryUri'
-	docker build -t localhost:4510/iris-machine-learning-tutorial .
-	docker push localhost:4510/iris-machine-learning-tutorial:latest
+	repoUri=$$(awslocal ecr create-repository --repository-name iris-machine-learning-tutorial | jq -r '.repository.repositoryUri'); \
+	docker build -t "$$repoUri" .;\
+	docker push "$$repoUri"; \
 	awslocal lambda create-function --function-name iris-prediction --package-type Image \
-		--code ImageUri=localhost:4510/repo1 --role arn:aws:iam::000000000:role/lambda-r1 \
-		--handler lambda_function.lambda_handler
+		--code ImageUri=$$repoUri \
+		--role arn:aws:iam::000000000:role/lambda-r1 \
+		--handler lambda_function.lambda_handler;
 
 test:
 	awslocal lambda invoke --function-name iris-prediction \
