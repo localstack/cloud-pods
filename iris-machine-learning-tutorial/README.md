@@ -1,6 +1,6 @@
 # Tutorial: Using Amazon Lambda and ECS to predict Iris species using Scikit-Learn
 
-In this tutorial, you’ll learn how to make a create a serverless Lambda function, deployed as a container image, to predict Iris species using Scikit-Learn. This tutorial is intended for Pro users who wish to get more acquainted with Lambda, ECS, and LocalStack's Cloud Pods for reproducible machine learning.
+In this tutorial, you’ll learn how to create a serverless Lambda function, deployed as a container image, to predict Iris species using Scikit-Learn. This tutorial is intended for Pro users who wish to get more acquainted with Lambda, ECS, and LocalStack's Cloud Pods for reproducible machine learning.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ make install
 
 ## Create a container image
 
-Create an ECS repository:
+Create an ECR repository:
 
 ```sh
 awslocal ecr create-repository --repository-name iris-machine-learning-tutorial | jq -r '.repository.repositoryUri'
