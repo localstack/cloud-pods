@@ -62,12 +62,6 @@ The `output.txt` file should contain the following output:
 
 ## Create a Cloud Pod
 
-Create a Cloud Pod:
-
-```sh
-localstack pod config --name iris-cloud-pod
-```
-
 Commit your Pod state:
 
 ```sh
