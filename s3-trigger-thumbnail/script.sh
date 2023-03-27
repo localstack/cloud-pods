@@ -8,7 +8,7 @@ awslocal iam create-role --role-name lambda-role \
 
 
 cd lambda-s3
-npm install sharp
+npm install
 zip -r function.zip .
 cd ..
 
