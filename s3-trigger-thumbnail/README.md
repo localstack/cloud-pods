@@ -13,7 +13,7 @@ For every image uploaded in the source S3 bucket, an AWS Lambda function will cr
 * Node.js v.14
 * `npm`
 
-## Installing 
+## Installing
 
 To install the dependencies:
 
