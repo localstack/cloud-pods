@@ -15,4 +15,8 @@ create-state:   ## Create Cloud Pod
 upload:
 	awslocal s3 cp pikachu.jpg s3://img-bucket
 
+s3-list:
+	awslocal s3api list-objects --bucket img-bucket
+	awslocal s3api list-objects --bucket img-bucket-resized
+
 .PHONY: usage install create-state
