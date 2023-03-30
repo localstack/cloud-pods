@@ -10,6 +10,6 @@ install:    ## Install dependencies
 	@which awslocal || pip install awscli-local
 
 create-state:        
-	@./script.sh
+	@bash ./script.sh
 
 .PHONY: usage install run test-ci
