@@ -6,9 +6,7 @@ awslocal s3 mb s3://img-bucket-resized
 awslocal iam create-role --role-name tut-role \
     --assume-role-policy-document file://role.json 
 
-cd lambda-s3
-npm install sharp
-zip -r function.zip .
+(cd lambda-s3 && npm install sharp && zip -r function.zip .)
 
 awslocal lambda create-function --function-name CreateThumbnail \
     --zip-file fileb://lambda-s3/function.zip --handler index.handler --runtime nodejs14.x \
