@@ -1,4 +1,4 @@
-# Cloud Pod — Scrap GitHub Trending repositories using Lambda
+# Cloud Pod — Scrape GitHub Trending repositories using Lambda
 
 The code in this directory is from [LocalStack Pro Samples](https://github.com/localstack/localstack-pro-samples/tree/master/lambda-function-urls/python). In this sample project, we create an AWS Lambda function that scrapes trending GitHub repositories and sends the results as a JSON response using the Lambda function URL. With the Function URL property, there is now a new way to call a Lambda Function via HTTP API call.
 
