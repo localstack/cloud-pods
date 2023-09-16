@@ -6,9 +6,8 @@ awslocal s3 mb s3://img-bucket-resized
 awslocal iam create-role --role-name lambda-role \
     --assume-role-policy-document file://role.json 
 
-
 cd lambda-s3
-npm install
+docker run --rm -v "$(pwd):/app" -w /app node:14 npm install --arch=x64 --platform=linux
 zip -r function.zip .
 cd ..
 
