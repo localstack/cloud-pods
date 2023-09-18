@@ -12,11 +12,15 @@ install:    ## Install dependencies
 create-state:   ## Create Cloud Pod
 	@./script.sh
 
-upload:
+upload:   # Upload image to trigger Lambda function
 	awslocal s3 cp pikachu.jpg s3://img-bucket
 
-s3-list:
+s3-list:  # List bucket contents
 	awslocal s3api list-objects --bucket img-bucket
 	awslocal s3api list-objects --bucket img-bucket-resized
 
-.PHONY: usage install create-state
+clean:    # Clean build output
+	rm -f lambda-s3/function.zip
+	rm -rf lambda-s3/node_modules
+
+.PHONY: usage install create-state upload s3-list clean
