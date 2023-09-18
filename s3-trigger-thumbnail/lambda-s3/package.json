@@ -1,0 +1,12 @@
+{
+  "name": "lambda-s3",
+  "version": "0.1.0",
+  "description": "Dependencies for S3-triggered Lambda",
+  "main": "index.js",
+  "dependencies": {
+    "sharp": "^0.32.5"
+  },
+  "devDependencies": {},
+  "author": "LocalStack",
+  "license": "APACHE-2.0"
+}

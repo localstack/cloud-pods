@@ -13,11 +13,11 @@ For every image uploaded in the source S3 bucket, an AWS Lambda function will cr
 * Node.js v.14
 * `npm`
 
-## Installing 
+## Installing
 
 To install the dependencies:
 
-```
+```bash
 make install
 ```
 
@@ -25,7 +25,7 @@ make install
 
 Run the following command will create the state of the application with all its components.
 
-```
+```bash
 make create-state
 ```
 
@@ -41,7 +41,7 @@ The AWS Lambda will be triggered and it will create a new image called `resized-
 
 You can inspect such a bucket as follows:
 
-```
+```bash
 awslocal s3 ls s3://img-bucket-resized
 ```
 
@@ -50,6 +50,6 @@ awslocal s3 ls s3://img-bucket-resized
 Instead of manually creating each resource, you can inject the public Cloud Pods named `thumbnail-qs` and achieve the same result.
 To do so, run the following command
 
-```
-localstack pod pull --name thumbnail-qs
+```bash
+localstack pod load thumbnail-qs
 ```
