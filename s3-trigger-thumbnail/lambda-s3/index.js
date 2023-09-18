@@ -10,7 +10,7 @@ const CREDENTIALS = {
 
 let s3;
 s3 = new AWS.S3({
-    endpoint: `http://${process.env.LOCALSTACK_HOSTNAME}:4566`,
+    endpoint: `http://${process.env.LOCALSTACK_HOSTNAME}:${process.env.EDGE_PORT}`,
     region: 'us-east-1',
     credentials: CREDENTIALS,
     s3ForcePathStyle: true
