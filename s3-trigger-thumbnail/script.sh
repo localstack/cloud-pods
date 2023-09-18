@@ -7,12 +7,12 @@ awslocal iam create-role --role-name lambda-role \
     --assume-role-policy-document file://role.json 
 
 cd lambda-s3
-docker run --rm -v "$(pwd):/app" -w /app node:14 npm install --arch=x64 --platform=linux
+docker run --rm -v "$(pwd):/app" -w /app node:16 npm install --arch=x64 --platform=linux
 zip -r function.zip .
 cd ..
 
 awslocal lambda create-function --function-name CreateThumbnail \
-    --zip-file fileb://lambda-s3/function.zip --handler index.handler --runtime nodejs14.x \
+    --zip-file fileb://lambda-s3/function.zip --handler index.handler --runtime nodejs16.x \
     --timeout 10 --memory-size 1024 \
     --role arn:aws:iam::000000000000:role/lambda-role
 awslocal lambda wait function-active-v2 --function-name CreateThumbnail
